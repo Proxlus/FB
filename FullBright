@@ -1,0 +1,21 @@
+local L = game:GetService("Lighting")
+
+L:GetPropertyChangedSignal("Brightness"):connect(function()
+    L.Brightness = math.huge;
+end)
+
+L:GetPropertyChangedSignal("Ambient"):connect(function()
+    L.Ambient = Color3.fromRGB(255,255,255)
+end)
+
+L:GetPropertyChangedSignal("GlobalShadows"):connect(function()
+    L.GlobalShadows = false;
+end)
+
+L.Brightness = math.huge;
+L.Ambient = Color3.fromRGB(255,255,255)
+L.GlobalShadows = false;
+L.MapSaturation:Destroy()
+L.SkyBox:Destroy()
+L.BlackWhite:Destroy()
+sethiddenproperty(game.Workspace.Lighting,"Technology",2)
